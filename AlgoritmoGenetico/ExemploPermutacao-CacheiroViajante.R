@@ -36,3 +36,4 @@ resultado = ga(type = "permutation",
 summary(resultado);
 summary(resultado)$solution
 plot(resultado);
+detach("package:GA");
