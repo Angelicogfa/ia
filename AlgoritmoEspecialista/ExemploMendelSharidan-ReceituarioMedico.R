@@ -27,4 +27,5 @@ inf = expert(analise, "ms", prob, semver);
 
 inf
 
-hist(inf, col = "blue")
+hist(inf, col = "blue");
+detach("package:expert");

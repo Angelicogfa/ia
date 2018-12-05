@@ -68,3 +68,4 @@ plot(dc);
 # oviga, usado para mostrar a frequencia acumulada
 og = ogive(inf);
 plot(og)
+detach("package:expert");
