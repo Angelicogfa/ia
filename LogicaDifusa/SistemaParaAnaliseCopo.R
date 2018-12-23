@@ -1,15 +1,15 @@
 # install.packages("sets");
-# library(sets);
+library(sets);
 
 sets_options("universe", seq(1, 200, 1));
 
 variaveis = set(
     Quantidade = fuzzy_variable(
-        Zero = fuzzy_triangular(corners = c(0, 1, 2)),
-        UmQuarto = fuzzy_triangular(corners = c(2, 2, 80)),
-        DoisQuartos = fuzzy_triangular(corners = c(50, 100, 150)),
-        TresQuartos = fuzzy_triangular(corners = c(120, 190, 199)),
-        QuatroQuartos = fuzzy_triangular(corners = c(199, 200, 200))
+        Zero = fuzzy_triangular(corners = c(0, 25, 50)),
+        UmQuarto = fuzzy_triangular(corners = c(25, 50, 75)),
+        DoisQuartos = fuzzy_triangular(corners = c(75, 100, 125)),
+        TresQuartos = fuzzy_triangular(corners = c(125, 150, 175)),
+        QuatroQuartos = fuzzy_triangular(corners = c(150, 175, 200))
     ),
     Classificacao = fuzzy_partition(varnames = c(TotalmenteVazio = 0, ParcialmenteVazio = 50, Metade = 100, ParcialmenteCheio = 150, TotalmenteCheio = 200), sd = 10)
 );
@@ -26,7 +26,7 @@ sistema = fuzzy_system(variaveis, regras);
 sistema;
 plot(sistema);
 
-inferencia = fuzzy_inference(sistema, list(Quantidade = 8));
+inferencia = fuzzy_inference(sistema, list(Quantidade = 10));
 inferencia;
 plot(inferencia);
 
